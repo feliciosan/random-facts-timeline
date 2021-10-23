@@ -1,9 +1,12 @@
 import React from "react";
+import { FactProvider } from "./contexts/fact";
 
 const App = () => {
   return (
     <div className="app">
-      <h1>APP</h1>
+      <FactProvider>
+        <h1>App</h1>
+      </FactProvider>
     </div>
   );
 };
