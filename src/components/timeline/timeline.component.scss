@@ -1,0 +1,71 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  &__actions::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: var(--black);
+    left: 0;
+    bottom: -16px;
+  }
+  &__content {
+    display: flex;
+    overflow-x: auto;
+    align-items: flex-end;
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+  &__item {
+    padding: 8px 24px;
+    cursor: pointer;
+    position: relative;
+    flex: 1;
+    text-align: center;
+    min-width: 90px;
+    transition: all ease-in-out 0.3s;
+  }
+  &__item::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 8px;
+    background-color: var(--black);
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: -8px;
+  }
+  &__item--active::before {
+    height: 16px;
+    top: -17px;
+    background-color: var(--white);
+  }
+  &__item--active::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    margin: auto;
+    border-radius: 100%;
+    transition: all ease-in-out 0.3s;
+    left: 0;
+    right: 0;
+    top: -16px;
+    background-color: var(--white);
+  }
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    cursor: pointer;
+  }
+}

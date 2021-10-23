@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from "react";
+import Timeline from "../timeline";
 import { FactContext } from "../../contexts/fact";
 import "./generator.component.scss";
 
 const Generator = () => {
-  const { fact, factList, generateFact, factError, isLoadingFact } =
+  const { fact, setFact, factList, generateFact, factError, isLoadingFact } =
     useContext(FactContext);
 
   useEffect(() => {
@@ -41,6 +42,7 @@ const Generator = () => {
         </button>
         <span className="error-message">{factError}</span>
       </div>
+      <Timeline currentItem={fact} changeItem={setFact} data={factList} />
     </section>
   );
 };
