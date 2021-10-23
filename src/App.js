@@ -6,7 +6,7 @@ import "./styles/app.scss";
 
 const App = () => {
   return (
-    <div className="app">
+    <div className="app" data-testid="app">
       <FactProvider>
         <Fragment>
           <Fact />

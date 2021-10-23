@@ -82,7 +82,7 @@ const Timeline = ({ currentItem, changeItem, data }) => {
 };
 
 Timeline.propTypes = {
-  currentItem: PropTypes.object.isRequired,
+  currentItem: PropTypes.object,
   changeItem: PropTypes.func.isRequired,
   data: PropTypes.array.isRequired,
 };
