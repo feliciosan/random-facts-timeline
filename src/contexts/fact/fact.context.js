@@ -18,8 +18,9 @@ export const FactProvider = ({ children }) => {
 
       const { data } = await FactsService.get();
       const currentFact = {
-        id: uuidv4(),
         ...data,
+        id: uuidv4(),
+        number: data.number || 0,
       };
 
       setFactList(sortByProperty([currentFact, ...factList], "number"));

@@ -1,11 +1,17 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Fact from "./components/fact";
+import Generator from "./components/generator";
 import { FactProvider } from "./contexts/fact";
+import "./styles/app.scss";
 
 const App = () => {
   return (
     <div className="app">
       <FactProvider>
-        <h1>App</h1>
+        <Fragment>
+          <Fact />
+          <Generator />
+        </Fragment>
       </FactProvider>
     </div>
   );

@@ -1,0 +1,17 @@
+.button {
+  padding: 8px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  &--black {
+    border-color: var(--black);
+    color: var(--black);
+  }
+  &--white {
+    border-color: var(--white);
+    color: var(--white);
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+}

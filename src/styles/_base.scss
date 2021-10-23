@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+.error-message {
+  margin: 8px 0;
+  color: var(--red);
+}
