@@ -25,7 +25,7 @@ This is what you need to do, to install and use the app.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/feliciosan/randon-timeline-facts.git
+   git clone https://github.com/feliciosan/random-facts-timeline.git
    ```
 2. Install YARN packages
    ```sh
