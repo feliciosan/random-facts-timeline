@@ -31,7 +31,7 @@ This is what you need to do, to install and use the app.
    ```sh
    yarn
    ```
-3. Create a **.env** file in the root of the project.
+3. Create a **.env.development.local** file in the root of the project.
    ```js
    const REACT_APP_API_HOST = "http://numbersapi.com";
    ```
