@@ -4,7 +4,7 @@ import { FactContext } from "../../contexts/fact";
 import "./generator.component.scss";
 
 const Generator = () => {
-  const { fact, setFact, factList, generateFact, factError, isLoadingFact } =
+  const { fact, selectFact, factList, generateFact, factError, isLoadingFact } =
     useContext(FactContext);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Generator = () => {
     <section className="generator">
       <div className="generator__action">
         <button
-          onClick={() => generateFact()}
+          onClick={generateFact}
           type="button"
           disabled={isLoadingFact ? "disabled" : ""}
           className={`button ${fact ? "button--white" : "button--black"}`}
@@ -42,7 +42,7 @@ const Generator = () => {
         </button>
         <span className="error-message">{factError}</span>
       </div>
-      <Timeline currentItem={fact} changeItem={setFact} data={factList} />
+      <Timeline currentItem={fact} changeItem={selectFact} data={factList} />
     </section>
   );
 };
