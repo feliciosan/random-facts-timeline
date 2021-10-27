@@ -5,8 +5,8 @@ import iconRight from "../../assets/icons/chevron-right.svg";
 import "./timeline.component.scss";
 
 const directionOptions = {
-  left: "LEFT",
-  right: "RIGHT",
+  LEFT: "LEFT",
+  RIGHT: "RIGHT",
 };
 
 const Timeline = ({ currentItem, changeItem, data }) => {
@@ -21,13 +21,13 @@ const Timeline = ({ currentItem, changeItem, data }) => {
     }
 
     switch (direction) {
-      case directionOptions.left:
-        if (selectedFactIndex === 0) return;
+      case directionOptions.LEFT:
+        if (selectedFactIndex === 0) break;
 
         changeItem(data[selectedFactIndex - 1]);
         break;
-      case directionOptions.right:
-        if (selectedFactIndex === data.length - 1) return;
+      case directionOptions.RIGHT:
+        if (selectedFactIndex === data.length - 1) break;
 
         changeItem(data[selectedFactIndex + 1]);
         break;
@@ -50,13 +50,13 @@ const Timeline = ({ currentItem, changeItem, data }) => {
     <div className="timeline">
       <div className="timeline__actions">
         <div
-          onClick={() => handleChange(directionOptions.left)}
+          onClick={() => handleChange(directionOptions.LEFT)}
           className="timeline__icon"
         >
           <img src={iconLeft} alt="" />
         </div>
         <div
-          onClick={() => handleChange(directionOptions.right)}
+          onClick={() => handleChange(directionOptions.RIGHT)}
           className="timeline__icon"
         >
           <img src={iconRight} alt="" />
@@ -66,12 +66,12 @@ const Timeline = ({ currentItem, changeItem, data }) => {
         {data.map((item) => (
           <div
             key={item.id}
+            onClick={() => changeItem(item)}
             className={`timeline__item ${
               currentItem &&
               item.id === currentItem.id &&
               "timeline__item--active"
             }`}
-            onClick={() => changeItem(item)}
           >
             {item.number}
           </div>
